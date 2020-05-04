@@ -1,6 +1,8 @@
 from room import Room
 from player import Player
 from world import World
+from util import Stack
+from util import Queue
 
 import random
 from ast import literal_eval
@@ -29,6 +31,19 @@ player = Player(world.starting_room)
 # traversal_path = ['n', 'n']
 traversal_path = []
 
+# U- Understand: 
+    # - Run a dfs to map out the world and create a an adjacency list, find the path to the room
+    # - Create an adjacency list from the dfs traversal path and run bfs to find the shortest route
+# P- Plan:
+    # - Use get_exits to add neighbors to the stack
+    # - Travel A single direction until it can no longer be traveled, travel next direction
+    # - Record location of id when traveling, When no longer able to travel, reverse direction, get neighbors
+
+
+# Execute: 
+
+
+
 
 
 # TRAVERSAL TEST - DO NOT MODIFY
@@ -50,13 +65,13 @@ else:
 
 #######
 # UNCOMMENT TO WALK AROUND
-#######
-player.current_room.print_room_description(player)
-while True:
-    cmds = input("-> ").lower().split(" ")
-    if cmds[0] in ["n", "s", "e", "w"]:
-        player.travel(cmds[0], True)
-    elif cmds[0] == "q":
-        break
-    else:
-        print("I did not understand that command.")
+# #######
+# player.current_room.print_room_description(player)
+# while True:
+#     cmds = input("-> ").lower().split(" ")
+#     if cmds[0] in ["n", "s", "e", "w"]:
+#         player.travel(cmds[0], True)
+#     elif cmds[0] == "q":
+#         break
+#     else:
+#         print("I did not understand that command.")
